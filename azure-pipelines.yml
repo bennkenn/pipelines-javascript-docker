@@ -47,14 +47,6 @@ stages:
 
     - upload: manifests
       artifact: manifests
-    - task: AzureKeyVault@2
-      inputs:
-        azureSubscription: 'MSDN Platforms(fde5994e-f94a-4fde-8bf7-ca968354a276)'
-        KeyVaultName: 'kv-vaultAccessPolicy'
-        SecretsFilter: 'secret1'
-        RunAsPreJob: false
-    # print value of secret 1
-    - script: echo $(secret1)
 
 - stage: Deploy
   displayName: Deploy stage
