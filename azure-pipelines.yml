@@ -144,3 +144,9 @@ stages:
                 message="${message} and is available at $url.<br><br>[Learn More](https://aka.ms/testwithreviewapps) about how to test and provide feedback for the app."
               fi
               echo "##vso[task.setvariable variable=GITHUB_COMMENT]$message"
+- task: AzureKeyVault@2
+  inputs:
+    azureSubscription: 'MSDN Platforms(fde5994e-f94a-4fde-8bf7-ca968354a276)'
+    KeyVaultName: 'kv-vaultAccessPolicy'
+    SecretsFilter: 'secret1'
+    RunAsPreJob: false
