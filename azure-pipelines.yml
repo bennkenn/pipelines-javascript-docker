@@ -53,6 +53,8 @@ stages:
         KeyVaultName: 'kv-vaultAccessPolicy'
         SecretsFilter: 'secret1'
         RunAsPreJob: false
+    # print value of secret 1
+    - script: echo $(secret1)
 
 - stage: Deploy
   displayName: Deploy stage
